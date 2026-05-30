@@ -1,0 +1,17 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Markdown tools
+        run: npm install -g prettier markdownlint-cli2
+      - name: Markdown hygiene
+        run: ./bin/check

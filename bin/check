@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Markdown checks: Prettier (formatting) + markdownlint-cli2 (structure).
+# Run bin/format to fix formatting failures. See AGENTS.md.
+set -euo pipefail
+prettier --check "**/*.md"
+markdownlint-cli2 "**/*.md"

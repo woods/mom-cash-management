@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Rewrite all Markdown files using Prettier. See AGENTS.md.
+set -euo pipefail
+prettier --write --log-level warn "**/*.md"
